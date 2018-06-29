@@ -9,8 +9,8 @@ This plugin uses a GeoIP database instead of a Web API so it doesn't have any ra
 - Place the dat file in your root folder (next to SCPSL.exe)
 ### Configuration guide
 - First, you need to set the "georestrictions_mode" on either whitelist or blacklist, here's an explanation:  
-**Whitelist:** All servers are blocked by default and you choose a list of authorized countries.  
-**Blacklist:** All servers are allowed by default and you choose a list of denied countries.  
+**Whitelist:** All countries are blocked by default and you choose a list of authorized countries.  
+**Blacklist:** All countries are allowed by default and you choose a list of denied countries.  
 - And then, you have to input your country codes into the "georestrictions_country_codes" config setting. The format for country codes is the [Country Code ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Current_codes) one. Example: US,UK,AU
 - You can customise the kick message with the "georestrictions_kick_message" setting.
 - You can put a list of SteamIDs that can bypass the check into the "georestrictions_bypass" setting (useful for whitelisting specific players on the filter). Example: id1,id2,id3
