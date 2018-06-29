@@ -23,4 +23,4 @@ georestrictions_country_codes | List | **Empty** | A list of [Country Code ISO 3
 georestrictions_kick_message | String | This is the default GeoRestrictions kick message. | Your custom kick message for the players that get restricted. You can put new lines using **\n**
 georestrictions_bypass | List | **Empty** | A list of SteamIDs that are able to bypass the filter.
 
-###### This product includes GeoLite2 data created by MaxMind, available from <a href="http://www.maxmind.com">http://www.maxmind.com</a>.
+###### This product includes GeoLite data created by MaxMind, available from <a href="http://www.maxmind.com">http://www.maxmind.com</a>.
