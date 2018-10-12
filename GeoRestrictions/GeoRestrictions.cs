@@ -14,7 +14,7 @@ namespace GeoRestrictions
     name = "GeoRestrictions",
     description = "A ServerMod plugin to restrict your server to one or more countries",
     id = "aquazus.georestrictions",
-    version = "1.0.0",
+    version = "1.0.1",
     SmodMajor = 3,
     SmodMinor = 1,
     SmodRevision = 0
