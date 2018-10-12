@@ -18,7 +18,7 @@ namespace GeoRestrictions
             plugin.Info("Player join handler instantiated successfuly!");
         }
 
-        public void OnPlayerJoin(PlayerJoinEvent pje)
+         public void OnPlayerJoin(PlayerJoinEvent pje)
         {
             if (!plugin.IsInitialized() || plugin.getMode() == Mode.Disabled || plugin.GetConfigList("georestrictions_country_codes").Length == 0) return;
             Player player = pje.Player;
@@ -26,11 +26,15 @@ namespace GeoRestrictions
             if (!match.Success) return;
             string ip = match.Value;
             Country country = plugin.GetPlayerCountry(ip);
-            if (!plugin.IsAuthorizedCountry(country))
+            if (!plugin.IsAuthorizedCountry(country) || player.GetAuthToken().Contains("Bypass geo restrictions: YES"))
             {
                 if (plugin.IsWhitelisted(player.SteamId))
                 {
                     plugin.Info("Allowing " + player.Name + " [" + player.SteamId + "] (" + ip + ") from " + country.getName() + " (" + country.getCode() + ")");
+                    return;
+                }else if (player.GetAuthToken().Contains("Bypass geo restrictions: YES"))
+                {
+                    plugin.Info("Allowing " + player.Name + " due to auth token flag.");
                     return;
                 }
                 plugin.Info("Disconnecting " + player.Name + " [" + player.SteamId + "] (" + ip + ") from " + country.getName() + " (" + country.getCode() + ")");
