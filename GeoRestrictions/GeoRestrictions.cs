@@ -17,7 +17,7 @@ namespace GeoRestrictions
     version = "1.0.1",
     SmodMajor = 3,
     SmodMinor = 1,
-    SmodRevision = 0
+    SmodRevision = 13
     )]
     class GeoRestrictions : Plugin
     {

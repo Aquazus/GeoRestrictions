@@ -26,13 +26,13 @@ namespace GeoRestrictions
             if (!match.Success) return;
             string ip = match.Value;
             Country country = plugin.GetPlayerCountry(ip);
-            if (!plugin.IsAuthorizedCountry(country) || player.GetAuthToken().Contains("Bypass geo restrictions: YES"))
+            if (!plugin.IsAuthorizedCountry(country))
             {
                 if (plugin.IsWhitelisted(player.SteamId))
                 {
                     plugin.Info("Allowing " + player.Name + " [" + player.SteamId + "] (" + ip + ") from " + country.getName() + " (" + country.getCode() + ")");
                     return;
-                }else if (player.GetAuthToken().Contains("Bypass geo restrictions: YES"))
+                } else if (player.GetAuthToken().Contains("Bypass geo restrictions: YES"))
                 {
                     plugin.Info("Allowing " + player.Name + " due to auth token flag.");
                     return;
